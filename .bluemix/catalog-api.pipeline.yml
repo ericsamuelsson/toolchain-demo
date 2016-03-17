@@ -28,6 +28,10 @@ stages:
       grunt dev-test-cov --no-color -f
     CHECK_COVERAGE_REGRESSION: 'true'
     TEST_TOOL_SELECT: mocha
+  properties:
+  - name: PIPELINE_DEBUG_SCRIPT
+    value: 'true'
+    type: text
 - name: DEV
   inputs:
   - type: job
@@ -41,6 +45,9 @@ stages:
     type: text
   - name: APP_URL
     value: undefined
+    type: text
+  - name: PIPELINE_DEBUG_SCRIPT
+    value: 'true'
     type: text
   jobs:
   - name: Pre Deploy Check
@@ -94,6 +101,9 @@ stages:
     type: text
   - name: APP_URL
     value: undefined
+    type: text
+  - name: PIPELINE_DEBUG_SCRIPT
+    value: 'true'
     type: text
   jobs:
   - name: Pre Deploy Check
@@ -167,6 +177,9 @@ stages:
     type: text
   - name: TEST_RESULT_FOR_AD
     value: ''
+    type: text
+  - name: PIPELINE_DEBUG_SCRIPT
+    value: 'true'
     type: text
   jobs:
   - name: Pre Deploy Check
