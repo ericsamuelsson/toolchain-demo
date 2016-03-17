@@ -12,6 +12,10 @@ stages:
   - name: Build
     type: builder
     artifact_dir: ''
+  properties:
+  - name: PIPELINE_DEBUG_SCRIPT
+    value: 'true'
+    type: text
 - name: DEV
   inputs:
   - type: job
@@ -25,6 +29,9 @@ stages:
     type: text
   - name: APP_URL
     value: undefined
+    type: text
+  - name: PIPELINE_DEBUG_SCRIPT
+    value: 'true'
     type: text
   jobs:
   - name: Deploy to dev
@@ -55,6 +62,9 @@ stages:
     type: text
   - name: APP_URL
     value: undefined
+    type: text
+  - name: PIPELINE_DEBUG_SCRIPT
+    value: 'true'
     type: text
   jobs:
   - name: Deploy to QA
@@ -107,6 +117,9 @@ stages:
     type: text
   - name: APP_URL
     value: undefined
+    type: text
+  - name: PIPELINE_DEBUG_SCRIPT
+    value: 'true'
     type: text
   jobs:
   - name: Deploy to prod
